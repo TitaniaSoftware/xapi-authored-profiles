@@ -297,6 +297,12 @@
           "presence": "included"
         },
         {
+          "location": "$.context.contextActivities.category[*].id",
+          "any": [
+            "https://w3id.org/xapi/cmi5/v1.1"
+          ]
+        },
+        {
           "location": "$.context.contextActivities.grouping[*]",
           "presence": "included",
           "scopeNote": {
