@@ -1,0 +1,892 @@
+<rdf:RDF
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:prov="http://www.w3.org/ns/prov#"
+    xmlns:profile="https://w3id.org/xapi/profiles/ontology#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:schemaorg="http://schema.org/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xapi="https://w3id.org/xapi/ontology#" > 
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5#terminated">
+    <skos:definition xml:lang="en">Restrictions on cmi5 use of the 'terminated' verb.</skos:definition>
+    <profile:rules rdf:nodeID="A0"/>
+    <skos:prefLabel xml:lang="en">Terminated</skos:prefLabel>
+    <profile:rules rdf:nodeID="A1"/>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <profile:verb rdf:resource="http://adlnet.gov/expapi/verbs/terminated"/>
+    <profile:contextCategoryActivityType rdf:resource="https://w3id.org/xapi/cmi5/context/categories/cmi5"/>
+    <rdf:type rdf:resource="https://w3id.org/xapi/profiles/ontology#StatementTemplate"/>
+    <profile:rules rdf:nodeID="A2"/>
+    <profile:rules rdf:nodeID="A3"/>
+    <profile:rules rdf:nodeID="A4"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A5">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#satisfieds"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5#waivedsession">
+    <profile:sequence rdf:nodeID="A6"/>
+    <skos:prefLabel xml:lang="en">Waived Session</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <rdf:type rdf:resource="https://w3id.org/xapi/profiles/ontology#Pattern"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A7">
+    <rdf:rest rdf:nodeID="A8"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#initialized"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5#satisfied">
+    <profile:rules rdf:nodeID="A9"/>
+    <rdf:type rdf:resource="https://w3id.org/xapi/profiles/ontology#StatementTemplate"/>
+    <profile:rules rdf:nodeID="A10"/>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <profile:rules rdf:nodeID="A11"/>
+    <profile:rules rdf:nodeID="A12"/>
+    <skos:prefLabel xml:lang="en">Satisfied</skos:prefLabel>
+    <profile:contextCategoryActivityType rdf:resource="https://w3id.org/xapi/cmi5/context/categories/cmi5"/>
+    <skos:definition xml:lang="en">Restrictions on cmi5 use of the 'satisfied' verb.</skos:definition>
+    <profile:verb rdf:resource="http://adlnet.gov/expapi/verbs/satisfied"/>
+    <profile:rules rdf:nodeID="A13"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A14">
+    <schemaorg:name>cmi5 Working Group</schemaorg:name>
+    <rdf:type rdf:resource="http://schema.org/Organization"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A15">
+    <rdf:rest rdf:nodeID="A16"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#initialized"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A17">
+    <profile:presence>excluded</profile:presence>
+    <profile:location>$.result.success</profile:location>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5#generalrestrictions">
+    <profile:rules rdf:nodeID="A18"/>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <skos:definition xml:lang="en">Restrictions for all cmi5-defined and -allowed statements</skos:definition>
+    <rdf:type rdf:resource="https://w3id.org/xapi/profiles/ontology#StatementTemplate"/>
+    <profile:rules rdf:nodeID="A19"/>
+    <profile:rules rdf:nodeID="A20"/>
+    <profile:rules rdf:nodeID="A21"/>
+    <skos:prefLabel xml:lang="en">General cmi5 restrictions</skos:prefLabel>
+    <profile:rules rdf:nodeID="A22"/>
+    <profile:rules rdf:nodeID="A23"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A19">
+    <profile:presence>included</profile:presence>
+    <profile:location>$.context.extensions['https://w3id.org/xapi/cmi5/context/extensions/sessionid']</profile:location>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A24">
+    <rdf:rest rdf:nodeID="A25"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#initialized"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A26">
+    <rdf:rest rdf:nodeID="A27"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#launched"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5/activities/course">
+    <skos:prefLabel xml:lang="en">course</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <skos:exactMatch rdf:resource="http://adlnet.gov/expapi/activities/course"/>
+    <skos:definition xml:lang="en">A course represents an amount of content that is published and registered for with the purpose of gaining completion.  It is represented with a Course Structure Format in cmi5 as the highest level of content (above Block and AU).</skos:definition>
+    <rdf:type rdf:resource="https://w3id.org/xapi/ontology#ActivityType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5#typicalsessions">
+    <profile:zeroOrMore rdf:resource="https://w3id.org/xapi/cmi5#typicalsession"/>
+    <skos:prefLabel xml:lang="en">Typical Sessions</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <skos:definition xml:lang="en">This pattern provides an option to use zero or more of the alernates for the Typical Session pattern.</skos:definition>
+    <rdf:type rdf:resource="https://w3id.org/xapi/profiles/ontology#Pattern"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A28">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#terminatedorabandoned"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A29">
+    <profile:presence>included</profile:presence>
+    <profile:location>$.result.completion</profile:location>
+    <profile:all rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</profile:all>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A10">
+    <profile:presence>included</profile:presence>
+    <profile:location>$.object.definition.type</profile:location>
+    <profile:any>https://w3id.org/xapi/cmi5/activitytype/course</profile:any>
+    <profile:any>https://w3id.org/xapi/cmi5/activitytype/block</profile:any>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A30">
+    <rdf:rest rdf:nodeID="A31"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#initialized"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A32">
+    <profile:presence>included</profile:presence>
+    <profile:location>$.context.contextActivities.category[*].id</profile:location>
+    <profile:any>https://w3id.org/xapi/cmi5/context/categories/moveon</profile:any>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A33">
+    <profile:presence>excluded</profile:presence>
+    <profile:location>$.result.score</profile:location>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5#completedthenpassed">
+    <profile:sequence rdf:nodeID="A34"/>
+    <skos:prefLabel xml:lang="en">Completed Then Passed</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <rdf:type rdf:resource="https://w3id.org/xapi/profiles/ontology#Pattern"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5/context/extensions/launchparameters">
+    <profile:inlineSchema>{ "type": "string" }</profile:inlineSchema>
+    <skos:prefLabel xml:lang="en">launch parameters</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <skos:definition xml:lang="en">'launchParameters' as provided in the LMS Launch Data for the AU plus registration</skos:definition>
+    <rdf:type rdf:resource="https://w3id.org/xapi/ontology#ContextExtension"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5#completionmaybefailedsession">
+    <profile:sequence rdf:nodeID="A26"/>
+    <skos:prefLabel xml:lang="en">Completion Maybe Failed Session</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <rdf:type rdf:resource="https://w3id.org/xapi/profiles/ontology#Pattern"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A35">
+    <rdf:rest rdf:nodeID="A36"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#satisfieds"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A36">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#completed"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A37">
+    <profile:presence>included</profile:presence>
+    <profile:location>$.context.contextActivities.category[*].id</profile:location>
+    <profile:any>https://w3id.org/xapi/cmi5/context/categories/moveon</profile:any>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A38">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#terminatedorabandoned"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/adl/verbs/abandoned">
+    <skos:prefLabel xml:lang="en">abandoned</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <skos:definition xml:lang="en">Indicates that the AU session was abnormally terminated by a learner's action (or due to a system failure).</skos:definition>
+    <rdf:type rdf:resource="https://w3id.org/xapi/ontology#Verb"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5#failedthenmaybecompleted">
+    <profile:sequence rdf:nodeID="A39"/>
+    <skos:prefLabel xml:lang="en">Failed Then Maybe Completed</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <rdf:type rdf:resource="https://w3id.org/xapi/profiles/ontology#Pattern"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A1">
+    <profile:none>https://w3id.org/xapi/cmi5/context/categories/moveon</profile:none>
+    <profile:location>$.context.contextActivities.category[*].id</profile:location>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A0">
+    <profile:presence>excluded</profile:presence>
+    <profile:location>$.result.success</profile:location>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A6">
+    <rdf:rest rdf:nodeID="A40"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#satisfieds"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/adl/verbs/satisfied">
+    <skos:prefLabel xml:lang="en">satisfied</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <skos:definition xml:lang="en">Indicates that the authority or activity provider determined the actor has fulfilled the criteria of the object or activity.</skos:definition>
+    <rdf:type rdf:resource="https://w3id.org/xapi/ontology#Verb"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5#passedthencompleted">
+    <profile:sequence rdf:nodeID="A41"/>
+    <skos:prefLabel xml:lang="en">Passed Then Completed</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <rdf:type rdf:resource="https://w3id.org/xapi/profiles/ontology#Pattern"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5#launched">
+    <profile:rules rdf:nodeID="A33"/>
+    <skos:prefLabel xml:lang="en">Launched</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <profile:rules rdf:nodeID="A42"/>
+    <profile:rules rdf:nodeID="A43"/>
+    <profile:rules rdf:nodeID="A44"/>
+    <profile:contextCategoryActivityType rdf:resource="https://w3id.org/xapi/cmi5/context/categories/cmi5"/>
+    <profile:rules rdf:nodeID="A45"/>
+    <profile:rules rdf:nodeID="A46"/>
+    <profile:rules rdf:nodeID="A47"/>
+    <profile:rules rdf:nodeID="A48"/>
+    <skos:definition xml:lang="en">Restrictions on cmi5 use of the 'launched' verb.</skos:definition>
+    <profile:verb rdf:resource="http://adlnet.gov/expapi/verbs/launched"/>
+    <rdf:type rdf:resource="https://w3id.org/xapi/profiles/ontology#StatementTemplate"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A39">
+    <rdf:rest rdf:nodeID="A49"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#failed"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A50">
+    <rdf:rest rdf:nodeID="A51"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#initialized"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A52">
+    <profile:presence>excluded</profile:presence>
+    <profile:location>$.result.score</profile:location>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A9">
+    <profile:none>https://w3id.org/xapi/cmi5/context/categories/moveon</profile:none>
+    <profile:location>$.context.contextActivities.category[*].id</profile:location>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A53">
+    <profile:presence>excluded</profile:presence>
+    <profile:location>$.result.completion</profile:location>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5#abandoned">
+    <profile:rules rdf:nodeID="A54"/>
+    <skos:definition xml:lang="en">Restrictions on cmi5 use of the 'abandoned' verb.</skos:definition>
+    <profile:rules rdf:nodeID="A55"/>
+    <profile:rules rdf:nodeID="A56"/>
+    <profile:rules rdf:nodeID="A57"/>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <skos:prefLabel xml:lang="en">Abandoned</skos:prefLabel>
+    <rdf:type rdf:resource="https://w3id.org/xapi/profiles/ontology#StatementTemplate"/>
+    <profile:rules rdf:nodeID="A53"/>
+    <profile:verb rdf:resource="https://w3id.org/xapi/adl/verbs/abandoned"/>
+    <profile:contextCategoryActivityType rdf:resource="https://w3id.org/xapi/cmi5/context/categories/cmi5"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A40">
+    <rdf:rest rdf:nodeID="A5"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#waived"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5#noresultsession">
+    <profile:sequence rdf:nodeID="A58"/>
+    <skos:prefLabel xml:lang="en">No Result Session</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <rdf:type rdf:resource="https://w3id.org/xapi/profiles/ontology#Pattern"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://adlnet.gov/expapi/verbs/passed">
+    <skos:prefLabel xml:lang="en">passed</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.1"/>
+    <skos:definition xml:lang="en">The learner attempted and succeeded in a judged activity in the AU.</skos:definition>
+    <rdf:type rdf:resource="https://w3id.org/xapi/ontology#Verb"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5#maybecompletedthenfailed">
+    <profile:sequence rdf:nodeID="A59"/>
+    <skos:prefLabel xml:lang="en">Maybe Completed Then Failed</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <rdf:type rdf:resource="https://w3id.org/xapi/profiles/ontology#Pattern"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A48">
+    <profile:none>https://w3id.org/xapi/cmi5/context/categories/moveon</profile:none>
+    <profile:location>$.context.contextActivities.category[*].id</profile:location>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A57">
+    <profile:presence>excluded</profile:presence>
+    <profile:location>$.result.success</profile:location>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A60">
+    <profile:presence>excluded</profile:presence>
+    <profile:location>$.result.completion</profile:location>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5#completed">
+    <profile:rules rdf:nodeID="A61"/>
+    <profile:rules rdf:nodeID="A62"/>
+    <profile:rules rdf:nodeID="A29"/>
+    <profile:rules rdf:nodeID="A63"/>
+    <skos:prefLabel xml:lang="en">Completed</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <skos:definition xml:lang="en">Restrictions on cmi5 use of the 'completed' verb.</skos:definition>
+    <rdf:type rdf:resource="https://w3id.org/xapi/profiles/ontology#StatementTemplate"/>
+    <profile:rules rdf:nodeID="A17"/>
+    <profile:contextCategoryActivityType rdf:resource="https://w3id.org/xapi/cmi5/context/categories/cmi5"/>
+    <profile:verb rdf:resource="http://adlnet.gov/expapi/verbs/completed"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A55">
+    <profile:presence>included</profile:presence>
+    <profile:location>$.result.duration</profile:location>
+    <skos:scopeNote rdf:nodeID="A64"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A43">
+    <profile:presence>excluded</profile:presence>
+    <profile:location>$.result.success</profile:location>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5#passed">
+    <profile:rules rdf:nodeID="A32"/>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <profile:contextCategoryActivityType rdf:resource="https://w3id.org/xapi/cmi5/context/categories/cmi5"/>
+    <profile:rules rdf:nodeID="A65"/>
+    <skos:prefLabel xml:lang="en">Passed</skos:prefLabel>
+    <rdf:type rdf:resource="https://w3id.org/xapi/profiles/ontology#StatementTemplate"/>
+    <profile:rules rdf:nodeID="A66"/>
+    <profile:rules rdf:nodeID="A67"/>
+    <profile:rules rdf:nodeID="A68"/>
+    <profile:verb rdf:resource="http://adlnet.gov/expapi/verbs/passed"/>
+    <skos:definition xml:lang="en">Restrictions on cmi5 use of the 'passed' verb.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5/activities/block">
+    <skos:prefLabel xml:lang="en">block</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <skos:definition xml:lang="en">A block represents a number of Assignable Units of which progress (completion/success) is rolled up to.  In cmi5 it is every level above the AU and below the Course.</skos:definition>
+    <rdf:type rdf:resource="https://w3id.org/xapi/ontology#ActivityType"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A69">
+    <rdf:rest rdf:nodeID="A70"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#satisfieds"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A66">
+    <profile:presence>excluded</profile:presence>
+    <profile:location>$.result.completion</profile:location>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A49">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#maybecompleted"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A71">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#failed"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A51">
+    <rdf:rest rdf:nodeID="A72"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#failed"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A73">
+    <profile:presence>excluded</profile:presence>
+    <profile:location>$.result.success</profile:location>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5#passedsession">
+    <profile:sequence rdf:nodeID="A74"/>
+    <skos:prefLabel xml:lang="en">Passed Session</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <rdf:type rdf:resource="https://w3id.org/xapi/profiles/ontology#Pattern"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5/context/extensions/sessionid">
+    <profile:inlineSchema>{ "type": "string" }</profile:inlineSchema>
+    <skos:prefLabel xml:lang="en">session ID</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <skos:definition xml:lang="en">A unique identifier for a single AU launch session based on actor and course registration.</skos:definition>
+    <rdf:type rdf:resource="https://w3id.org/xapi/ontology#ContextExtension"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A23">
+    <profile:presence>included</profile:presence>
+    <profile:location>$.context.registration</profile:location>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A68">
+    <profile:presence>recommended</profile:presence>
+    <profile:location>$.result.score</profile:location>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A75">
+    <profile:presence>included</profile:presence>
+    <profile:location>$.result['https://w3id.org/xapi/cmi5/result/extensions/reason']</profile:location>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A76">
+    <rdf:rest rdf:nodeID="A77"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#satisfieds"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A34">
+    <rdf:rest rdf:nodeID="A78"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#completed"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A79">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#terminatedorabandoned"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://adlnet.gov/expapi/verbs/launched">
+    <skos:prefLabel xml:lang="en">launched</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.1"/>
+    <skos:definition xml:lang="en">Indicates that the AU was launched by the LMS.</skos:definition>
+    <rdf:type rdf:resource="https://w3id.org/xapi/ontology#Verb"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5#typicalsession">
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <profile:alternates rdf:resource="https://w3id.org/xapi/cmi5#completionpassedsession"/>
+    <profile:alternates rdf:resource="https://w3id.org/xapi/cmi5#passedsession"/>
+    <profile:alternates rdf:resource="https://w3id.org/xapi/cmi5#failedsession"/>
+    <rdf:type rdf:resource="https://w3id.org/xapi/profiles/ontology#Pattern"/>
+    <profile:alternates rdf:resource="https://w3id.org/xapi/cmi5#completionmaybefailedsession"/>
+    <profile:alternates rdf:resource="https://w3id.org/xapi/cmi5#noresultsession"/>
+    <profile:alternates rdf:resource="https://w3id.org/xapi/cmi5#completionnosuccesssession"/>
+    <profile:alternates rdf:resource="https://w3id.org/xapi/cmi5#waivedsession"/>
+    <skos:prefLabel xml:lang="en">Typical Session</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A58">
+    <rdf:rest rdf:nodeID="A7"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#launched"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A74">
+    <rdf:rest rdf:nodeID="A24"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#launched"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5/result/extensions/reason">
+    <profile:inlineSchema>{ "type": "string" }</profile:inlineSchema>
+    <skos:prefLabel xml:lang="en">reason</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <skos:definition xml:lang="en">Indicates the reason why an AU was 'waived' (marked complete by an alternative means)</skos:definition>
+    <rdf:type rdf:resource="https://w3id.org/xapi/ontology#ResultExtension"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A62">
+    <profile:presence>excluded</profile:presence>
+    <profile:location>$.result.score</profile:location>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A80">
+    <profile:none>https://w3id.org/xapi/cmi5/context/categories/moveon</profile:none>
+    <profile:location>$.context.contextActivities.category[*].id</profile:location>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A81">
+    <xapi:name xml:lang="en">moveon</xapi:name>
+    <xapi:description xml:lang="en">The activity category for cmi5 "success" and "completion" statements.</xapi:description>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A47">
+    <profile:presence>included</profile:presence>
+    <profile:location>$.context.extensions['https://w3id.org/xapi/cmi5/context/extensions/moveon']</profile:location>
+    <profile:all>NotApplicable</profile:all>
+    <profile:all>CompletedOrPassed</profile:all>
+    <profile:all>CompletedAndPassed</profile:all>
+    <profile:all>Completed</profile:all>
+    <profile:all>Passed</profile:all>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5#completionpassedsession">
+    <profile:sequence rdf:nodeID="A82"/>
+    <skos:prefLabel xml:lang="en">Completed And Passed Session</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <rdf:type rdf:resource="https://w3id.org/xapi/profiles/ontology#Pattern"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/adl/verbs/waived">
+    <skos:prefLabel xml:lang="en">waived</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <skos:definition xml:lang="en">Indicates that the learning activity requirements were met by means other than completing the activity. A waived statement is used to indicate that the activity may be skipped by the actor.</skos:definition>
+    <rdf:type rdf:resource="https://w3id.org/xapi/ontology#Verb"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5#completionnosuccesssession">
+    <profile:sequence rdf:nodeID="A83"/>
+    <skos:prefLabel xml:lang="en">Completion No Success Session</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <rdf:type rdf:resource="https://w3id.org/xapi/profiles/ontology#Pattern"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A2">
+    <profile:presence>excluded</profile:presence>
+    <profile:location>$.result.score</profile:location>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A70">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#terminatedorabandoned"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5/context/extensions/launchmode">
+    <profile:inlineSchema>{ "enum": ["Normal", "Browse", "Review"] }</profile:inlineSchema>
+    <skos:prefLabel xml:lang="en">launch mode</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <skos:definition xml:lang="en">Indicates what launch mode an AU was launched with by the LMS</skos:definition>
+    <rdf:type rdf:resource="https://w3id.org/xapi/ontology#ContextExtension"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5#failedsession">
+    <profile:sequence rdf:nodeID="A84"/>
+    <skos:prefLabel xml:lang="en">Failed Session</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <rdf:type rdf:resource="https://w3id.org/xapi/profiles/ontology#Pattern"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A65">
+    <profile:presence>included</profile:presence>
+    <profile:location>$.result.duration</profile:location>
+    <skos:scopeNote rdf:nodeID="A85"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5#maybecompleted">
+    <profile:optional rdf:resource="https://w3id.org/xapi/cmi5#completed"/>
+    <skos:prefLabel xml:lang="en">Maybe Completed</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <rdf:type rdf:resource="https://w3id.org/xapi/profiles/ontology#Pattern"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A46">
+    <profile:presence>included</profile:presence>
+    <profile:location>$.context.extensions['https://w3id.org/xapi/cmi5/context/extensions/launchurl']</profile:location>
+    <skos:scopeNote rdf:nodeID="A86"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5#completedandpassed">
+    <profile:alternates rdf:resource="https://w3id.org/xapi/cmi5#passedthencompleted"/>
+    <profile:alternates rdf:resource="https://w3id.org/xapi/cmi5#completedthenpassed"/>
+    <skos:prefLabel xml:lang="en">Completed And Passed</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <rdf:type rdf:resource="https://w3id.org/xapi/profiles/ontology#Pattern"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5/context/extensions/masteryscore">
+    <profile:inlineSchema>{ "type": "number",  "maximum": 1, "minimum": 0 }</profile:inlineSchema>
+    <skos:prefLabel xml:lang="en">mastery score</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <skos:definition xml:lang="en">'masteryScore' as provided in the LMS Launch Data for the AU plus registration used to determine the pass/fail result based on score</skos:definition>
+    <rdf:type rdf:resource="https://w3id.org/xapi/ontology#ContextExtension"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A87">
+    <profile:presence>included</profile:presence>
+    <profile:location>$.result.duration</profile:location>
+    <skos:scopeNote rdf:nodeID="A88"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A59">
+    <rdf:rest rdf:nodeID="A89"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#maybecompleted"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A21">
+    <profile:presence>included</profile:presence>
+    <profile:location>$.context.contextActivities.grouping[*]</profile:location>
+    <skos:scopeNote rdf:nodeID="A90"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5/context/categories/moveon">
+    <profile:activityDefinition rdf:nodeID="A81"/>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.1"/>
+    <rdf:type rdf:resource="https://w3id.org/xapi/ontology#Activity"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A42">
+    <profile:presence>included</profile:presence>
+    <profile:location>$.context.extensions['https://w3id.org/xapi/cmi5/context/extensions/launchmode']</profile:location>
+    <profile:all>Review</profile:all>
+    <profile:all>Browse</profile:all>
+    <profile:all>Normal</profile:all>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A91">
+    <profile:presence>excluded</profile:presence>
+    <profile:location>$.result.completion</profile:location>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A92">
+    <rdf:rest rdf:nodeID="A38"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#satisfieds"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://adlnet.gov/expapi/verbs/failed">
+    <skos:prefLabel xml:lang="en">failed</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.1"/>
+    <skos:definition xml:lang="en">The learner attempted and failed in a judged activity in the AU.</skos:definition>
+    <rdf:type rdf:resource="https://w3id.org/xapi/ontology#Verb"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A13">
+    <profile:presence>excluded</profile:presence>
+    <profile:location>$.result.completion</profile:location>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5#satisfieds">
+    <profile:zeroOrMore rdf:resource="https://w3id.org/xapi/cmi5#satisfied"/>
+    <skos:prefLabel xml:lang="en">Satisfieds</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <rdf:type rdf:resource="https://w3id.org/xapi/profiles/ontology#Pattern"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5#completedandmaybefailed">
+    <profile:alternates rdf:resource="https://w3id.org/xapi/cmi5#failedthenmaybecompleted"/>
+    <profile:alternates rdf:resource="https://w3id.org/xapi/cmi5#maybecompletedthenfailed"/>
+    <skos:prefLabel xml:lang="en">Completed And Maybe Failed</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <rdf:type rdf:resource="https://w3id.org/xapi/profiles/ontology#Pattern"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://adlnet.gov/expapi/verbs/terminated">
+    <skos:prefLabel xml:lang="en">terminated</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.1"/>
+    <skos:definition xml:lang="en">The verb "Terminated" indicates that the AU was terminated by the Learner and that the AU will not be sending any more statements for the launch session.</skos:definition>
+    <rdf:type rdf:resource="https://w3id.org/xapi/ontology#Verb"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A78">
+    <rdf:rest rdf:nodeID="A93"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#satisfieds"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A94">
+    <profile:presence>included</profile:presence>
+    <profile:location>$.result.success</profile:location>
+    <profile:all rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</profile:all>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5#toplevel">
+    <profile:sequence rdf:nodeID="A76"/>
+    <profile:primary rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</profile:primary>
+    <skos:prefLabel xml:lang="en">General Pattern</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <skos:definition xml:lang="en">This pattern describes the sequence of statements sent over the an entire course registration.</skos:definition>
+    <rdf:type rdf:resource="https://w3id.org/xapi/profiles/ontology#Pattern"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A95">
+    <profile:presence>excluded</profile:presence>
+    <profile:location>$.result.score</profile:location>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5#failed">
+    <profile:rules rdf:nodeID="A96"/>
+    <profile:rules rdf:nodeID="A91"/>
+    <skos:prefLabel xml:lang="en">Failed</skos:prefLabel>
+    <profile:rules rdf:nodeID="A94"/>
+    <profile:rules rdf:nodeID="A97"/>
+    <skos:definition xml:lang="en">Restrictions on cmi5 use of the 'failed' verb.</skos:definition>
+    <profile:verb rdf:resource="http://adlnet.gov/expapi/verbs/failed"/>
+    <profile:contextCategoryActivityType rdf:resource="https://w3id.org/xapi/cmi5/context/categories/cmi5"/>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <rdf:type rdf:resource="https://w3id.org/xapi/profiles/ontology#StatementTemplate"/>
+    <profile:rules rdf:nodeID="A87"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5/context/categories/cmi5">
+    <profile:activityDefinition rdf:nodeID="A98"/>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.1"/>
+    <rdf:type rdf:resource="https://w3id.org/xapi/ontology#Activity"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A20">
+    <profile:presence>included</profile:presence>
+    <profile:location>$.id</profile:location>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5/v1.1">
+    <prov:wasRevisionOf rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A12">
+    <profile:presence>excluded</profile:presence>
+    <profile:location>$.result.score</profile:location>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A4">
+    <profile:presence>included</profile:presence>
+    <profile:location>$.result.duration</profile:location>
+    <skos:scopeNote rdf:nodeID="A99"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://adlnet.gov/expapi/verbs/initialized">
+    <skos:prefLabel xml:lang="en">initialized</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.1"/>
+    <skos:definition xml:lang="en">An "Initialized" statement is used by the AU to indicate that it has been fully initialized. The "Initialized" statement MUST follow, within a reasonable period of time, the "Launched" statement created by the LMS.</skos:definition>
+    <rdf:type rdf:resource="https://w3id.org/xapi/ontology#Verb"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A22">
+    <profile:location>$.context.contextActivities.category[*].id</profile:location>
+    <profile:any>https://w3id.org/xapi/cmi5/v1.1</profile:any>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A98">
+    <xapi:name xml:lang="en">cmi5</xapi:name>
+    <xapi:description xml:lang="en">The overall activity encompassing a cmi5 AU interaction.</xapi:description>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5/context/extensions/launchurl">
+    <profile:inlineSchema>{ "type": "string", "format": "uri" }</profile:inlineSchema>
+    <skos:prefLabel xml:lang="en">launch URL</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <skos:definition xml:lang="en">The URL used by the LMS to launch the AU</skos:definition>
+    <rdf:type rdf:resource="https://w3id.org/xapi/ontology#ContextExtension"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5/result/extensions/progress">
+    <profile:inlineSchema>{ "type": "number", "maximum": 100, "minimum": 0, "multipleOf": 1.0 }</profile:inlineSchema>
+    <skos:prefLabel xml:lang="en">progress</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <skos:definition xml:lang="en">An integer value between 0 and 100 (inclusive) indicating the completion of the AU as a percentage.
+
+The AU may set this value in statements to indicate level of completion. The AU SHOULD NOT set a progress value in a Completed statement or if it has previously issued a Completed statement for the AU in the current registration.</skos:definition>
+    <rdf:type rdf:resource="https://w3id.org/xapi/ontology#ResultExtension"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A11">
+    <profile:presence>excluded</profile:presence>
+    <profile:location>$.result.success</profile:location>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A31">
+    <rdf:rest rdf:nodeID="A100"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#completed"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A16">
+    <rdf:rest rdf:nodeID="A69"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#completedandpassed"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A67">
+    <profile:presence>included</profile:presence>
+    <profile:location>$.result.success</profile:location>
+    <profile:all rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</profile:all>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A8">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#terminatedorabandoned"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://adlnet.gov/expapi/verbs/completed">
+    <skos:prefLabel xml:lang="en">completed</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.1"/>
+    <skos:definition xml:lang="en">The verb "Completed" indicates the learner viewed or did all of the relevant activities in an AU presentation. The use of the Completed verb indicates progress of 100%.</skos:definition>
+    <rdf:type rdf:resource="https://w3id.org/xapi/ontology#Verb"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A25">
+    <rdf:rest rdf:nodeID="A101"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#passed"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5/v1.0">
+    <prov:generatedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-03-27T12:30:00-07:00</prov:generatedAtTime>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5/context/extensions/moveon">
+    <profile:inlineSchema>{ "enum": ["Passed", "Completed", "CompletedAndPassed", "CompletedOrPassed", "NotApplicable"] }</profile:inlineSchema>
+    <skos:prefLabel xml:lang="en">move on</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <skos:definition xml:lang="en">'moveOn' as provided in the LMS Launch Data for the AU plus registration</skos:definition>
+    <rdf:type rdf:resource="https://w3id.org/xapi/ontology#ContextExtension"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A63">
+    <profile:presence>included</profile:presence>
+    <profile:location>$.result.duration</profile:location>
+    <skos:scopeNote rdf:nodeID="A102"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A103">
+    <profile:presence>included</profile:presence>
+    <profile:location>$.result.completion</profile:location>
+    <profile:all rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</profile:all>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A18">
+    <profile:presence>included</profile:presence>
+    <profile:location>$.timestamp</profile:location>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A44">
+    <profile:presence>excluded</profile:presence>
+    <profile:location>$.result.completion</profile:location>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A89">
+    <rdf:rest rdf:nodeID="A71"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#satisfieds"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A54">
+    <profile:presence>excluded</profile:presence>
+    <profile:location>$.result.score</profile:location>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5">
+    <profile:patterns rdf:resource="https://w3id.org/xapi/cmi5#completionnosuccesssession"/>
+    <profile:versions rdf:resource="https://w3id.org/xapi/cmi5/v1.1"/>
+    <profile:concepts rdf:resource="https://w3id.org/xapi/cmi5/context/extensions/launchparameters"/>
+    <rdf:type rdf:resource="https://w3id.org/xapi/profiles/ontology#Profile"/>
+    <profile:concepts rdf:resource="https://w3id.org/xapi/cmi5/context/extensions/sessionid"/>
+    <schemaorg:author rdf:nodeID="A14"/>
+    <profile:templates rdf:resource="https://w3id.org/xapi/cmi5#completed"/>
+    <profile:templates rdf:resource="https://w3id.org/xapi/cmi5#generalrestrictions"/>
+    <profile:concepts rdf:resource="https://w3id.org/xapi/adl/verbs/satisfied"/>
+    <profile:patterns rdf:resource="https://w3id.org/xapi/cmi5#passedthencompleted"/>
+    <profile:patterns rdf:resource="https://w3id.org/xapi/cmi5#completedandpassed"/>
+    <rdfs:seeAlso rdf:resource="https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md"/>
+    <profile:concepts rdf:resource="https://w3id.org/xapi/cmi5/context/categories/cmi5"/>
+    <profile:concepts rdf:resource="https://w3id.org/xapi/cmi5/context/categories/moveon"/>
+    <profile:templates rdf:resource="https://w3id.org/xapi/cmi5#launched"/>
+    <profile:patterns rdf:resource="https://w3id.org/xapi/cmi5#failedsession"/>
+    <profile:patterns rdf:resource="https://w3id.org/xapi/cmi5#failedthenmaybecompleted"/>
+    <profile:patterns rdf:resource="https://w3id.org/xapi/cmi5#typicalsessions"/>
+    <profile:templates rdf:resource="https://w3id.org/xapi/cmi5#failed"/>
+    <profile:concepts rdf:resource="http://adlnet.gov/expapi/verbs/passed"/>
+    <profile:concepts rdf:resource="https://w3id.org/xapi/adl/verbs/waived"/>
+    <profile:concepts rdf:resource="https://w3id.org/xapi/cmi5/context/extensions/masteryscore"/>
+    <profile:patterns rdf:resource="https://w3id.org/xapi/cmi5#passedsession"/>
+    <profile:templates rdf:resource="https://w3id.org/xapi/cmi5#satisfied"/>
+    <profile:templates rdf:resource="https://w3id.org/xapi/cmi5#waived"/>
+    <profile:patterns rdf:resource="https://w3id.org/xapi/cmi5#satisfieds"/>
+    <profile:patterns rdf:resource="https://w3id.org/xapi/cmi5#maybecompleted"/>
+    <dcterms:conformsTo rdf:resource="https://w3id.org/xapi/profiles#1.0"/>
+    <profile:concepts rdf:resource="http://adlnet.gov/expapi/verbs/launched"/>
+    <profile:patterns rdf:resource="https://w3id.org/xapi/cmi5#maybecompletedthenfailed"/>
+    <profile:templates rdf:resource="https://w3id.org/xapi/cmi5#passed"/>
+    <profile:patterns rdf:resource="https://w3id.org/xapi/cmi5#completionpassedsession"/>
+    <profile:patterns rdf:resource="https://w3id.org/xapi/cmi5#completionmaybefailedsession"/>
+    <profile:concepts rdf:resource="https://w3id.org/xapi/cmi5/context/extensions/moveon"/>
+    <profile:concepts rdf:resource="https://w3id.org/xapi/cmi5/result/extensions/progress"/>
+    <profile:concepts rdf:resource="https://w3id.org/xapi/cmi5/result/extensions/reason"/>
+    <profile:versions rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <profile:patterns rdf:resource="https://w3id.org/xapi/cmi5#completedthenpassed"/>
+    <profile:templates rdf:resource="https://w3id.org/xapi/cmi5#initialized"/>
+    <profile:patterns rdf:resource="https://w3id.org/xapi/cmi5#typicalsession"/>
+    <profile:concepts rdf:resource="https://w3id.org/xapi/cmi5/activities/course"/>
+    <profile:concepts rdf:resource="https://w3id.org/xapi/cmi5/activities/block"/>
+    <skos:definition xml:lang="en">This specification describes interoperable runtime communication between Learning Management Systems (LMS) and Assignable Units (AU).
+
+The runtime communication and behavior of all parts of the system are carefully described in the full specification, which can be found at https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md . This is a structured representation of cmi5 concepts, statement structure, and statement communications patterns that the additional rules in the full specification build upon and provide the definitive interpretation of.</skos:definition>
+    <skos:prefLabel xml:lang="en">cmi5 Profile</skos:prefLabel>
+    <profile:concepts rdf:resource="https://w3id.org/xapi/cmi5/context/extensions/launchurl"/>
+    <profile:patterns rdf:resource="https://w3id.org/xapi/cmi5#waivedsession"/>
+    <profile:templates rdf:resource="https://w3id.org/xapi/cmi5#abandoned"/>
+    <profile:concepts rdf:resource="http://adlnet.gov/expapi/verbs/failed"/>
+    <profile:concepts rdf:resource="http://adlnet.gov/expapi/verbs/terminated"/>
+    <profile:concepts rdf:resource="https://w3id.org/xapi/cmi5/context/extensions/launchmode"/>
+    <profile:patterns rdf:resource="https://w3id.org/xapi/cmi5#completedandmaybefailed"/>
+    <profile:concepts rdf:resource="http://adlnet.gov/expapi/verbs/completed"/>
+    <profile:patterns rdf:resource="https://w3id.org/xapi/cmi5#terminatedorabandoned"/>
+    <profile:patterns rdf:resource="https://w3id.org/xapi/cmi5#toplevel"/>
+    <profile:concepts rdf:resource="https://w3id.org/xapi/adl/verbs/abandoned"/>
+    <profile:patterns rdf:resource="https://w3id.org/xapi/cmi5#noresultsession"/>
+    <profile:concepts rdf:resource="http://adlnet.gov/expapi/verbs/initialized"/>
+    <profile:templates rdf:resource="https://w3id.org/xapi/cmi5#terminated"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A45">
+    <profile:presence>included</profile:presence>
+    <profile:location>$.context.extensions['https://w3id.org/xapi/cmi5/context/extensions/launchparameters']</profile:location>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A61">
+    <profile:presence>included</profile:presence>
+    <profile:location>$.context.contextActivities.category[*].id</profile:location>
+    <profile:any>https://w3id.org/xapi/cmi5/context/categories/moveon</profile:any>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A72">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#terminatedorabandoned"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A84">
+    <rdf:rest rdf:nodeID="A50"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#launched"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A104">
+    <rdf:rest rdf:nodeID="A92"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#completedandmaybefailed"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A96">
+    <profile:presence>included</profile:presence>
+    <profile:location>$.context.contextActivities.category[*].id</profile:location>
+    <profile:any>https://w3id.org/xapi/cmi5/context/categories/moveon</profile:any>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A83">
+    <rdf:rest rdf:nodeID="A30"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#launched"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A97">
+    <profile:presence>recommended</profile:presence>
+    <profile:location>$.result.score</profile:location>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A82">
+    <rdf:rest rdf:nodeID="A15"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#launched"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A93">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#passed"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A101">
+    <rdf:rest rdf:nodeID="A79"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#satisfieds"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5#terminatedorabandoned">
+    <profile:alternates rdf:resource="https://w3id.org/xapi/cmi5#abandoned"/>
+    <profile:alternates rdf:resource="https://w3id.org/xapi/cmi5#terminated"/>
+    <skos:prefLabel xml:lang="en">Terminated Or Abandoned</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <rdf:type rdf:resource="https://w3id.org/xapi/profiles/ontology#Pattern"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A77">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#typicalsessions"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A3">
+    <profile:presence>excluded</profile:presence>
+    <profile:location>$.result.completion</profile:location>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A41">
+    <rdf:rest rdf:nodeID="A35"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#passed"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A100">
+    <rdf:rest rdf:nodeID="A28"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#satisfieds"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A56">
+    <profile:none>https://w3id.org/xapi/cmi5/context/categories/moveon</profile:none>
+    <profile:location>$.context.contextActivities.category[*].id</profile:location>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5#waived">
+    <rdf:type rdf:resource="https://w3id.org/xapi/profiles/ontology#StatementTemplate"/>
+    <profile:rules rdf:nodeID="A52"/>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <profile:rules rdf:nodeID="A105"/>
+    <profile:rules rdf:nodeID="A37"/>
+    <profile:verb rdf:resource="http://adlnet.gov/expapi/verbs/waived"/>
+    <profile:contextCategoryActivityType rdf:resource="https://w3id.org/xapi/cmi5/context/categories/cmi5"/>
+    <skos:definition xml:lang="en">Restictions on cmi5 use of the 'waived' verb.</skos:definition>
+    <skos:prefLabel xml:lang="en">Waived</skos:prefLabel>
+    <profile:rules rdf:nodeID="A103"/>
+    <profile:rules rdf:nodeID="A75"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A105">
+    <profile:presence>included</profile:presence>
+    <profile:location>$.result.success</profile:location>
+    <profile:all rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</profile:all>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/xapi/cmi5#initialized">
+    <skos:prefLabel xml:lang="en">Initialized</skos:prefLabel>
+    <profile:rules rdf:nodeID="A95"/>
+    <profile:contextCategoryActivityType rdf:resource="https://w3id.org/xapi/cmi5/context/categories/cmi5"/>
+    <profile:verb rdf:resource="http://adlnet.gov/expapi/verbs/initialized"/>
+    <skos:inScheme rdf:resource="https://w3id.org/xapi/cmi5/v1.0"/>
+    <profile:rules rdf:nodeID="A80"/>
+    <skos:definition xml:lang="en">Restrictions on cmi5 use of the 'initialized' verb.</skos:definition>
+    <profile:rules rdf:nodeID="A60"/>
+    <profile:rules rdf:nodeID="A73"/>
+    <rdf:type rdf:resource="https://w3id.org/xapi/profiles/ontology#StatementTemplate"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A27">
+    <rdf:rest rdf:nodeID="A104"/>
+    <rdf:first rdf:resource="https://w3id.org/xapi/cmi5#initialized"/>
+  </rdf:Description>
+</rdf:RDF>

@@ -1,0 +1,786 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xapi: <https://w3id.org/xapi/ontology#> .
+@prefix profile: <https://w3id.org/xapi/profiles/ontology#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix schemaorg: <http://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://w3id.org/xapi/cmi5>
+        a                   profile:Profile ;
+        dcterms:conformsTo  <https://w3id.org/xapi/profiles#1.0> ;
+        schemaorg:author    _:b0 ;
+        rdfs:seeAlso        <https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md> ;
+        skos:definition     "This specification describes interoperable runtime communication between Learning Management Systems (LMS) and Assignable Units (AU).\n\nThe runtime communication and behavior of all parts of the system are carefully described in the full specification, which can be found at https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md . This is a structured representation of cmi5 concepts, statement structure, and statement communications patterns that the additional rules in the full specification build upon and provide the definitive interpretation of."@en ;
+        skos:prefLabel      "cmi5 Profile"@en ;
+        profile:concepts    <http://adlnet.gov/expapi/verbs/launched> ;
+        profile:concepts    <http://adlnet.gov/expapi/verbs/initialized> ;
+        profile:concepts    <http://adlnet.gov/expapi/verbs/completed> ;
+        profile:concepts    <http://adlnet.gov/expapi/verbs/passed> ;
+        profile:concepts    <http://adlnet.gov/expapi/verbs/failed> ;
+        profile:concepts    <http://adlnet.gov/expapi/verbs/terminated> ;
+        profile:concepts    <https://w3id.org/xapi/adl/verbs/abandoned> ;
+        profile:concepts    <https://w3id.org/xapi/adl/verbs/satisfied> ;
+        profile:concepts    <https://w3id.org/xapi/adl/verbs/waived> ;
+        profile:concepts    <https://w3id.org/xapi/cmi5/context/categories/cmi5> ;
+        profile:concepts    <https://w3id.org/xapi/cmi5/context/categories/moveon> ;
+        profile:concepts    <https://w3id.org/xapi/cmi5/activities/block> ;
+        profile:concepts    <https://w3id.org/xapi/cmi5/activities/course> ;
+        profile:concepts    <https://w3id.org/xapi/cmi5/result/extensions/progress> ;
+        profile:concepts    <https://w3id.org/xapi/cmi5/result/extensions/reason> ;
+        profile:concepts    <https://w3id.org/xapi/cmi5/context/extensions/sessionid> ;
+        profile:concepts    <https://w3id.org/xapi/cmi5/context/extensions/masteryscore> ;
+        profile:concepts    <https://w3id.org/xapi/cmi5/context/extensions/launchmode> ;
+        profile:concepts    <https://w3id.org/xapi/cmi5/context/extensions/launchurl> ;
+        profile:concepts    <https://w3id.org/xapi/cmi5/context/extensions/launchparameters> ;
+        profile:concepts    <https://w3id.org/xapi/cmi5/context/extensions/moveon> ;
+        profile:patterns    <https://w3id.org/xapi/cmi5#satisfieds> ;
+        profile:patterns    <https://w3id.org/xapi/cmi5#waivedsession> ;
+        profile:patterns    <https://w3id.org/xapi/cmi5#noresultsession> ;
+        profile:patterns    <https://w3id.org/xapi/cmi5#completionnosuccesssession> ;
+        profile:patterns    <https://w3id.org/xapi/cmi5#passedsession> ;
+        profile:patterns    <https://w3id.org/xapi/cmi5#completionpassedsession> ;
+        profile:patterns    <https://w3id.org/xapi/cmi5#failedsession> ;
+        profile:patterns    <https://w3id.org/xapi/cmi5#completionmaybefailedsession> ;
+        profile:patterns    <https://w3id.org/xapi/cmi5#terminatedorabandoned> ;
+        profile:patterns    <https://w3id.org/xapi/cmi5#completedandpassed> ;
+        profile:patterns    <https://w3id.org/xapi/cmi5#completedthenpassed> ;
+        profile:patterns    <https://w3id.org/xapi/cmi5#passedthencompleted> ;
+        profile:patterns    <https://w3id.org/xapi/cmi5#completedandmaybefailed> ;
+        profile:patterns    <https://w3id.org/xapi/cmi5#maybecompletedthenfailed> ;
+        profile:patterns    <https://w3id.org/xapi/cmi5#failedthenmaybecompleted> ;
+        profile:patterns    <https://w3id.org/xapi/cmi5#maybecompleted> ;
+        profile:patterns    <https://w3id.org/xapi/cmi5#typicalsession> ;
+        profile:patterns    <https://w3id.org/xapi/cmi5#typicalsessions> ;
+        profile:patterns    <https://w3id.org/xapi/cmi5#toplevel> ;
+        profile:templates   <https://w3id.org/xapi/cmi5#generalrestrictions> ;
+        profile:templates   <https://w3id.org/xapi/cmi5#launched> ;
+        profile:templates   <https://w3id.org/xapi/cmi5#initialized> ;
+        profile:templates   <https://w3id.org/xapi/cmi5#completed> ;
+        profile:templates   <https://w3id.org/xapi/cmi5#passed> ;
+        profile:templates   <https://w3id.org/xapi/cmi5#failed> ;
+        profile:templates   <https://w3id.org/xapi/cmi5#abandoned> ;
+        profile:templates   <https://w3id.org/xapi/cmi5#waived> ;
+        profile:templates   <https://w3id.org/xapi/cmi5#terminated> ;
+        profile:templates   <https://w3id.org/xapi/cmi5#satisfied> ;
+        profile:versions    <https://w3id.org/xapi/cmi5/v1.1> ;
+        profile:versions    <https://w3id.org/xapi/cmi5/v1.0> .
+
+_:b0    a               schemaorg:Organization ;
+        schemaorg:name  "cmi5 Working Group" .
+
+<http://adlnet.gov/expapi/verbs/launched>
+        a                xapi:Verb ;
+        skos:definition  "Indicates that the AU was launched by the LMS."@en ;
+        skos:inScheme    <https://w3id.org/xapi/cmi5/v1.1> ;
+        skos:prefLabel   "launched"@en .
+
+<https://w3id.org/xapi/cmi5/v1.1>
+        prov:wasRevisionOf  <https://w3id.org/xapi/cmi5/v1.0> .
+
+<http://adlnet.gov/expapi/verbs/initialized>
+        a                xapi:Verb ;
+        skos:definition  "An \"Initialized\" statement is used by the AU to indicate that it has been fully initialized. The \"Initialized\" statement MUST follow, within a reasonable period of time, the \"Launched\" statement created by the LMS."@en ;
+        skos:inScheme    <https://w3id.org/xapi/cmi5/v1.1> ;
+        skos:prefLabel   "initialized"@en .
+
+<http://adlnet.gov/expapi/verbs/completed>
+        a                xapi:Verb ;
+        skos:definition  "The verb \"Completed\" indicates the learner viewed or did all of the relevant activities in an AU presentation. The use of the Completed verb indicates progress of 100%."@en ;
+        skos:inScheme    <https://w3id.org/xapi/cmi5/v1.1> ;
+        skos:prefLabel   "completed"@en .
+
+<http://adlnet.gov/expapi/verbs/passed>
+        a                xapi:Verb ;
+        skos:definition  "The learner attempted and succeeded in a judged activity in the AU."@en ;
+        skos:inScheme    <https://w3id.org/xapi/cmi5/v1.1> ;
+        skos:prefLabel   "passed"@en .
+
+<http://adlnet.gov/expapi/verbs/failed>
+        a                xapi:Verb ;
+        skos:definition  "The learner attempted and failed in a judged activity in the AU."@en ;
+        skos:inScheme    <https://w3id.org/xapi/cmi5/v1.1> ;
+        skos:prefLabel   "failed"@en .
+
+<http://adlnet.gov/expapi/verbs/terminated>
+        a                xapi:Verb ;
+        skos:definition  "The verb \"Terminated\" indicates that the AU was terminated by the Learner and that the AU will not be sending any more statements for the launch session."@en ;
+        skos:inScheme    <https://w3id.org/xapi/cmi5/v1.1> ;
+        skos:prefLabel   "terminated"@en .
+
+<https://w3id.org/xapi/adl/verbs/abandoned>
+        a                xapi:Verb ;
+        skos:definition  "Indicates that the AU session was abnormally terminated by a learner's action (or due to a system failure)."@en ;
+        skos:inScheme    <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel   "abandoned"@en .
+
+<https://w3id.org/xapi/cmi5/v1.0>
+        prov:generatedAtTime  "2017-03-27T12:30:00-07:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<https://w3id.org/xapi/adl/verbs/satisfied>
+        a                xapi:Verb ;
+        skos:definition  "Indicates that the authority or activity provider determined the actor has fulfilled the criteria of the object or activity."@en ;
+        skos:inScheme    <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel   "satisfied"@en .
+
+<https://w3id.org/xapi/adl/verbs/waived>
+        a                xapi:Verb ;
+        skos:definition  "Indicates that the learning activity requirements were met by means other than completing the activity. A waived statement is used to indicate that the activity may be skipped by the actor."@en ;
+        skos:inScheme    <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel   "waived"@en .
+
+<https://w3id.org/xapi/cmi5/context/categories/cmi5>
+        a                           xapi:Activity ;
+        skos:inScheme               <https://w3id.org/xapi/cmi5/v1.1> ;
+        profile:activityDefinition  _:b1 .
+
+_:b1    xapi:description  "The overall activity encompassing a cmi5 AU interaction."@en ;
+        xapi:name         "cmi5"@en .
+
+<https://w3id.org/xapi/cmi5/context/categories/moveon>
+        a                           xapi:Activity ;
+        skos:inScheme               <https://w3id.org/xapi/cmi5/v1.1> ;
+        profile:activityDefinition  _:b2 .
+
+_:b2    xapi:description  "The activity category for cmi5 \"success\" and \"completion\" statements."@en ;
+        xapi:name         "moveon"@en .
+
+<https://w3id.org/xapi/cmi5/activities/block>
+        a                xapi:ActivityType ;
+        skos:definition  "A block represents a number of Assignable Units of which progress (completion/success) is rolled up to.  In cmi5 it is every level above the AU and below the Course."@en ;
+        skos:inScheme    <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel   "block"@en .
+
+<https://w3id.org/xapi/cmi5/activities/course>
+        a                xapi:ActivityType ;
+        skos:definition  "A course represents an amount of content that is published and registered for with the purpose of gaining completion.  It is represented with a Course Structure Format in cmi5 as the highest level of content (above Block and AU)."@en ;
+        skos:exactMatch  <http://adlnet.gov/expapi/activities/course> ;
+        skos:inScheme    <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel   "course"@en .
+
+<https://w3id.org/xapi/cmi5/result/extensions/progress>
+        a                     xapi:ResultExtension ;
+        skos:definition       "An integer value between 0 and 100 (inclusive) indicating the completion of the AU as a percentage.\n\nThe AU may set this value in statements to indicate level of completion. The AU SHOULD NOT set a progress value in a Completed statement or if it has previously issued a Completed statement for the AU in the current registration."@en ;
+        skos:inScheme         <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel        "progress"@en ;
+        profile:inlineSchema  "{ \"type\": \"number\", \"maximum\": 100, \"minimum\": 0, \"multipleOf\": 1.0 }" .
+
+<https://w3id.org/xapi/cmi5/result/extensions/reason>
+        a                     xapi:ResultExtension ;
+        skos:definition       "Indicates the reason why an AU was 'waived' (marked complete by an alternative means)"@en ;
+        skos:inScheme         <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel        "reason"@en ;
+        profile:inlineSchema  "{ \"type\": \"string\" }" .
+
+<https://w3id.org/xapi/cmi5/context/extensions/sessionid>
+        a                     xapi:ContextExtension ;
+        skos:definition       "A unique identifier for a single AU launch session based on actor and course registration."@en ;
+        skos:inScheme         <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel        "session ID"@en ;
+        profile:inlineSchema  "{ \"type\": \"string\" }" .
+
+<https://w3id.org/xapi/cmi5/context/extensions/masteryscore>
+        a                     xapi:ContextExtension ;
+        skos:definition       "'masteryScore' as provided in the LMS Launch Data for the AU plus registration used to determine the pass/fail result based on score"@en ;
+        skos:inScheme         <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel        "mastery score"@en ;
+        profile:inlineSchema  "{ \"type\": \"number\",  \"maximum\": 1, \"minimum\": 0 }" .
+
+<https://w3id.org/xapi/cmi5/context/extensions/launchmode>
+        a                     xapi:ContextExtension ;
+        skos:definition       "Indicates what launch mode an AU was launched with by the LMS"@en ;
+        skos:inScheme         <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel        "launch mode"@en ;
+        profile:inlineSchema  "{ \"enum\": [\"Normal\", \"Browse\", \"Review\"] }" .
+
+<https://w3id.org/xapi/cmi5/context/extensions/launchurl>
+        a                     xapi:ContextExtension ;
+        skos:definition       "The URL used by the LMS to launch the AU"@en ;
+        skos:inScheme         <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel        "launch URL"@en ;
+        profile:inlineSchema  "{ \"type\": \"string\", \"format\": \"uri\" }" .
+
+<https://w3id.org/xapi/cmi5/context/extensions/launchparameters>
+        a                     xapi:ContextExtension ;
+        skos:definition       "'launchParameters' as provided in the LMS Launch Data for the AU plus registration"@en ;
+        skos:inScheme         <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel        "launch parameters"@en ;
+        profile:inlineSchema  "{ \"type\": \"string\" }" .
+
+<https://w3id.org/xapi/cmi5/context/extensions/moveon>
+        a                     xapi:ContextExtension ;
+        skos:definition       "'moveOn' as provided in the LMS Launch Data for the AU plus registration"@en ;
+        skos:inScheme         <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel        "move on"@en ;
+        profile:inlineSchema  "{ \"enum\": [\"Passed\", \"Completed\", \"CompletedAndPassed\", \"CompletedOrPassed\", \"NotApplicable\"] }" .
+
+<https://w3id.org/xapi/cmi5#satisfieds>
+        a                   profile:Pattern ;
+        skos:inScheme       <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel      "Satisfieds"@en ;
+        profile:zeroOrMore  <https://w3id.org/xapi/cmi5#satisfied> .
+
+<https://w3id.org/xapi/cmi5#satisfied>
+        a                profile:StatementTemplate ;
+        skos:definition  "Restrictions on cmi5 use of the 'satisfied' verb."@en ;
+        skos:inScheme    <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel   "Satisfied"@en ;
+        profile:contextCategoryActivityType  <https://w3id.org/xapi/cmi5/context/categories/cmi5> ;
+        profile:rules    _:b3 ;
+        profile:rules    _:b4 ;
+        profile:rules    _:b5 ;
+        profile:rules    _:b6 ;
+        profile:rules    _:b7 ;
+        profile:verb     <http://adlnet.gov/expapi/verbs/satisfied> .
+
+<https://w3id.org/xapi/cmi5#waivedsession>
+        a                 profile:Pattern ;
+        skos:inScheme     <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel    "Waived Session"@en ;
+        profile:sequence  _:b8 .
+
+_:b8    <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#satisfieds> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  _:b9 .
+
+_:b9    <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#waived> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  _:b10 .
+
+_:b10   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#satisfieds> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+
+<https://w3id.org/xapi/cmi5#waived>
+        a                profile:StatementTemplate ;
+        skos:definition  "Restictions on cmi5 use of the 'waived' verb."@en ;
+        skos:inScheme    <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel   "Waived"@en ;
+        profile:contextCategoryActivityType  <https://w3id.org/xapi/cmi5/context/categories/cmi5> ;
+        profile:rules    _:b11 ;
+        profile:rules    _:b12 ;
+        profile:rules    _:b13 ;
+        profile:rules    _:b14 ;
+        profile:rules    _:b15 ;
+        profile:verb     <http://adlnet.gov/expapi/verbs/waived> .
+
+<https://w3id.org/xapi/cmi5#noresultsession>
+        a                 profile:Pattern ;
+        skos:inScheme     <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel    "No Result Session"@en ;
+        profile:sequence  _:b16 .
+
+_:b16   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#launched> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  _:b17 .
+
+_:b17   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#initialized> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  _:b18 .
+
+_:b18   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#terminatedorabandoned> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+
+<https://w3id.org/xapi/cmi5#launched>
+        a                profile:StatementTemplate ;
+        skos:definition  "Restrictions on cmi5 use of the 'launched' verb."@en ;
+        skos:inScheme    <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel   "Launched"@en ;
+        profile:contextCategoryActivityType  <https://w3id.org/xapi/cmi5/context/categories/cmi5> ;
+        profile:rules    _:b19 ;
+        profile:rules    _:b20 ;
+        profile:rules    _:b21 ;
+        profile:rules    _:b22 ;
+        profile:rules    _:b23 ;
+        profile:rules    _:b24 ;
+        profile:rules    _:b25 ;
+        profile:rules    _:b26 ;
+        profile:verb     <http://adlnet.gov/expapi/verbs/launched> .
+
+<https://w3id.org/xapi/cmi5#initialized>
+        a                profile:StatementTemplate ;
+        skos:definition  "Restrictions on cmi5 use of the 'initialized' verb."@en ;
+        skos:inScheme    <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel   "Initialized"@en ;
+        profile:contextCategoryActivityType  <https://w3id.org/xapi/cmi5/context/categories/cmi5> ;
+        profile:rules    _:b27 ;
+        profile:rules    _:b28 ;
+        profile:rules    _:b29 ;
+        profile:rules    _:b30 ;
+        profile:verb     <http://adlnet.gov/expapi/verbs/initialized> .
+
+<https://w3id.org/xapi/cmi5#terminatedorabandoned>
+        a                   profile:Pattern ;
+        skos:inScheme       <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel      "Terminated Or Abandoned"@en ;
+        profile:alternates  <https://w3id.org/xapi/cmi5#terminated> ;
+        profile:alternates  <https://w3id.org/xapi/cmi5#abandoned> .
+
+<https://w3id.org/xapi/cmi5#completionnosuccesssession>
+        a                 profile:Pattern ;
+        skos:inScheme     <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel    "Completion No Success Session"@en ;
+        profile:sequence  _:b31 .
+
+_:b31   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#launched> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  _:b32 .
+
+_:b32   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#initialized> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  _:b33 .
+
+_:b33   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#completed> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  _:b34 .
+
+_:b34   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#satisfieds> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  _:b35 .
+
+_:b35   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#terminatedorabandoned> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+
+<https://w3id.org/xapi/cmi5#completed>
+        a                profile:StatementTemplate ;
+        skos:definition  "Restrictions on cmi5 use of the 'completed' verb."@en ;
+        skos:inScheme    <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel   "Completed"@en ;
+        profile:contextCategoryActivityType  <https://w3id.org/xapi/cmi5/context/categories/cmi5> ;
+        profile:rules    _:b36 ;
+        profile:rules    _:b37 ;
+        profile:rules    _:b38 ;
+        profile:rules    _:b39 ;
+        profile:rules    _:b40 ;
+        profile:verb     <http://adlnet.gov/expapi/verbs/completed> .
+
+<https://w3id.org/xapi/cmi5#passedsession>
+        a                 profile:Pattern ;
+        skos:inScheme     <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel    "Passed Session"@en ;
+        profile:sequence  _:b41 .
+
+_:b41   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#launched> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  _:b42 .
+
+_:b42   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#initialized> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  _:b43 .
+
+_:b43   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#passed> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  _:b44 .
+
+_:b44   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#satisfieds> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  _:b45 .
+
+_:b45   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#terminatedorabandoned> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+
+<https://w3id.org/xapi/cmi5#passed>
+        a                profile:StatementTemplate ;
+        skos:definition  "Restrictions on cmi5 use of the 'passed' verb."@en ;
+        skos:inScheme    <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel   "Passed"@en ;
+        profile:contextCategoryActivityType  <https://w3id.org/xapi/cmi5/context/categories/cmi5> ;
+        profile:rules    _:b46 ;
+        profile:rules    _:b47 ;
+        profile:rules    _:b48 ;
+        profile:rules    _:b49 ;
+        profile:rules    _:b50 ;
+        profile:verb     <http://adlnet.gov/expapi/verbs/passed> .
+
+<https://w3id.org/xapi/cmi5#completionpassedsession>
+        a                 profile:Pattern ;
+        skos:inScheme     <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel    "Completed And Passed Session"@en ;
+        profile:sequence  _:b51 .
+
+_:b51   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#launched> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  _:b52 .
+
+_:b52   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#initialized> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  _:b53 .
+
+_:b53   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#completedandpassed> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  _:b54 .
+
+_:b54   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#satisfieds> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  _:b55 .
+
+_:b55   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#terminatedorabandoned> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+
+<https://w3id.org/xapi/cmi5#completedandpassed>
+        a                   profile:Pattern ;
+        skos:inScheme       <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel      "Completed And Passed"@en ;
+        profile:alternates  <https://w3id.org/xapi/cmi5#completedthenpassed> ;
+        profile:alternates  <https://w3id.org/xapi/cmi5#passedthencompleted> .
+
+<https://w3id.org/xapi/cmi5#failedsession>
+        a                 profile:Pattern ;
+        skos:inScheme     <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel    "Failed Session"@en ;
+        profile:sequence  _:b56 .
+
+_:b56   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#launched> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  _:b57 .
+
+_:b57   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#initialized> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  _:b58 .
+
+_:b58   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#failed> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  _:b59 .
+
+_:b59   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#terminatedorabandoned> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+
+<https://w3id.org/xapi/cmi5#failed>
+        a                profile:StatementTemplate ;
+        skos:definition  "Restrictions on cmi5 use of the 'failed' verb."@en ;
+        skos:inScheme    <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel   "Failed"@en ;
+        profile:contextCategoryActivityType  <https://w3id.org/xapi/cmi5/context/categories/cmi5> ;
+        profile:rules    _:b60 ;
+        profile:rules    _:b61 ;
+        profile:rules    _:b62 ;
+        profile:rules    _:b63 ;
+        profile:rules    _:b64 ;
+        profile:verb     <http://adlnet.gov/expapi/verbs/failed> .
+
+<https://w3id.org/xapi/cmi5#completionmaybefailedsession>
+        a                 profile:Pattern ;
+        skos:inScheme     <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel    "Completion Maybe Failed Session"@en ;
+        profile:sequence  _:b65 .
+
+_:b65   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#launched> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  _:b66 .
+
+_:b66   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#initialized> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  _:b67 .
+
+_:b67   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#completedandmaybefailed> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  _:b68 .
+
+_:b68   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#satisfieds> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  _:b69 .
+
+_:b69   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#terminatedorabandoned> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+
+<https://w3id.org/xapi/cmi5#completedandmaybefailed>
+        a                   profile:Pattern ;
+        skos:inScheme       <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel      "Completed And Maybe Failed"@en ;
+        profile:alternates  <https://w3id.org/xapi/cmi5#maybecompletedthenfailed> ;
+        profile:alternates  <https://w3id.org/xapi/cmi5#failedthenmaybecompleted> .
+
+<https://w3id.org/xapi/cmi5#terminated>
+        a                profile:StatementTemplate ;
+        skos:definition  "Restrictions on cmi5 use of the 'terminated' verb."@en ;
+        skos:inScheme    <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel   "Terminated"@en ;
+        profile:contextCategoryActivityType  <https://w3id.org/xapi/cmi5/context/categories/cmi5> ;
+        profile:rules    _:b70 ;
+        profile:rules    _:b71 ;
+        profile:rules    _:b72 ;
+        profile:rules    _:b73 ;
+        profile:rules    _:b74 ;
+        profile:verb     <http://adlnet.gov/expapi/verbs/terminated> .
+
+<https://w3id.org/xapi/cmi5#abandoned>
+        a                profile:StatementTemplate ;
+        skos:definition  "Restrictions on cmi5 use of the 'abandoned' verb."@en ;
+        skos:inScheme    <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel   "Abandoned"@en ;
+        profile:contextCategoryActivityType  <https://w3id.org/xapi/cmi5/context/categories/cmi5> ;
+        profile:rules    _:b75 ;
+        profile:rules    _:b76 ;
+        profile:rules    _:b77 ;
+        profile:rules    _:b78 ;
+        profile:rules    _:b79 ;
+        profile:verb     <https://w3id.org/xapi/adl/verbs/abandoned> .
+
+<https://w3id.org/xapi/cmi5#completedthenpassed>
+        a                 profile:Pattern ;
+        skos:inScheme     <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel    "Completed Then Passed"@en ;
+        profile:sequence  _:b80 .
+
+_:b80   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#completed> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  _:b81 .
+
+_:b81   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#satisfieds> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  _:b82 .
+
+_:b82   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#passed> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+
+<https://w3id.org/xapi/cmi5#passedthencompleted>
+        a                 profile:Pattern ;
+        skos:inScheme     <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel    "Passed Then Completed"@en ;
+        profile:sequence  _:b83 .
+
+_:b83   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#passed> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  _:b84 .
+
+_:b84   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#satisfieds> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  _:b85 .
+
+_:b85   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#completed> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+
+<https://w3id.org/xapi/cmi5#maybecompletedthenfailed>
+        a                 profile:Pattern ;
+        skos:inScheme     <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel    "Maybe Completed Then Failed"@en ;
+        profile:sequence  _:b86 .
+
+_:b86   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#maybecompleted> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  _:b87 .
+
+_:b87   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#satisfieds> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  _:b88 .
+
+_:b88   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#failed> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+
+<https://w3id.org/xapi/cmi5#failedthenmaybecompleted>
+        a                 profile:Pattern ;
+        skos:inScheme     <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel    "Failed Then Maybe Completed"@en ;
+        profile:sequence  _:b89 .
+
+_:b89   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#failed> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  _:b90 .
+
+_:b90   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#maybecompleted> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+
+<https://w3id.org/xapi/cmi5#maybecompleted>
+        a                 profile:Pattern ;
+        skos:inScheme     <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel    "Maybe Completed"@en ;
+        profile:optional  <https://w3id.org/xapi/cmi5#completed> .
+
+<https://w3id.org/xapi/cmi5#typicalsession>
+        a                   profile:Pattern ;
+        skos:inScheme       <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel      "Typical Session"@en ;
+        profile:alternates  <https://w3id.org/xapi/cmi5#completionmaybefailedsession> ;
+        profile:alternates  <https://w3id.org/xapi/cmi5#completionpassedsession> ;
+        profile:alternates  <https://w3id.org/xapi/cmi5#failedsession> ;
+        profile:alternates  <https://w3id.org/xapi/cmi5#noresultsession> ;
+        profile:alternates  <https://w3id.org/xapi/cmi5#passedsession> ;
+        profile:alternates  <https://w3id.org/xapi/cmi5#completionnosuccesssession> ;
+        profile:alternates  <https://w3id.org/xapi/cmi5#waivedsession> .
+
+<https://w3id.org/xapi/cmi5#typicalsessions>
+        a                   profile:Pattern ;
+        skos:definition     "This pattern provides an option to use zero or more of the alernates for the Typical Session pattern."@en ;
+        skos:inScheme       <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel      "Typical Sessions"@en ;
+        profile:zeroOrMore  <https://w3id.org/xapi/cmi5#typicalsession> .
+
+<https://w3id.org/xapi/cmi5#toplevel>
+        a                 profile:Pattern ;
+        skos:definition   "This pattern describes the sequence of statements sent over the an entire course registration."@en ;
+        skos:inScheme     <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel    "General Pattern"@en ;
+        profile:primary   true ;
+        profile:sequence  _:b91 .
+
+_:b91   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#satisfieds> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  _:b92 .
+
+_:b92   <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>  <https://w3id.org/xapi/cmi5#typicalsessions> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+
+<https://w3id.org/xapi/cmi5#generalrestrictions>
+        a                profile:StatementTemplate ;
+        skos:definition  "Restrictions for all cmi5-defined and -allowed statements"@en ;
+        skos:inScheme    <https://w3id.org/xapi/cmi5/v1.0> ;
+        skos:prefLabel   "General cmi5 restrictions"@en ;
+        profile:rules    _:b93 ;
+        profile:rules    _:b94 ;
+        profile:rules    _:b95 ;
+        profile:rules    _:b96 ;
+        profile:rules    _:b97 ;
+        profile:rules    _:b98 .
+
+_:b93   profile:location  "$.id" ;
+        profile:presence  "included" .
+
+_:b94   profile:location  "$.timestamp" ;
+        profile:presence  "included" .
+
+_:b95   profile:any       "https://w3id.org/xapi/cmi5/v1.1" ;
+        profile:location  "$.context.contextActivities.category[*].id" .
+
+_:b96   skos:scopeNote    _:b99 ;
+        profile:location  "$.context.contextActivities.grouping[*]" ;
+        profile:presence  "included" .
+
+_:b97   profile:location  "$.context.extensions['https://w3id.org/xapi/cmi5/context/extensions/sessionid']" ;
+        profile:presence  "included" .
+
+_:b98   profile:location  "$.context.registration" ;
+        profile:presence  "included" .
+
+_:b19   profile:location  "$.result.score" ;
+        profile:presence  "excluded" .
+
+_:b20   profile:location  "$.result.success" ;
+        profile:presence  "excluded" .
+
+_:b21   profile:location  "$.result.completion" ;
+        profile:presence  "excluded" .
+
+_:b22   profile:location  "$.context.contextActivities.category[*].id" ;
+        profile:none      "https://w3id.org/xapi/cmi5/context/categories/moveon" .
+
+_:b23   profile:all       "Normal" ;
+        profile:all       "Browse" ;
+        profile:all       "Review" ;
+        profile:location  "$.context.extensions['https://w3id.org/xapi/cmi5/context/extensions/launchmode']" ;
+        profile:presence  "included" .
+
+_:b24   skos:scopeNote    _:b100 ;
+        profile:location  "$.context.extensions['https://w3id.org/xapi/cmi5/context/extensions/launchurl']" ;
+        profile:presence  "included" .
+
+_:b25   profile:all       "Passed" ;
+        profile:all       "Completed" ;
+        profile:all       "CompletedAndPassed" ;
+        profile:all       "CompletedOrPassed" ;
+        profile:all       "NotApplicable" ;
+        profile:location  "$.context.extensions['https://w3id.org/xapi/cmi5/context/extensions/moveon']" ;
+        profile:presence  "included" .
+
+_:b26   profile:location  "$.context.extensions['https://w3id.org/xapi/cmi5/context/extensions/launchparameters']" ;
+        profile:presence  "included" .
+
+_:b27   profile:location  "$.result.score" ;
+        profile:presence  "excluded" .
+
+_:b28   profile:location  "$.result.success" ;
+        profile:presence  "excluded" .
+
+_:b29   profile:location  "$.result.completion" ;
+        profile:presence  "excluded" .
+
+_:b30   profile:location  "$.context.contextActivities.category[*].id" ;
+        profile:none      "https://w3id.org/xapi/cmi5/context/categories/moveon" .
+
+_:b36   profile:location  "$.result.score" ;
+        profile:presence  "excluded" .
+
+_:b37   profile:location  "$.result.success" ;
+        profile:presence  "excluded" .
+
+_:b38   profile:all       true ;
+        profile:location  "$.result.completion" ;
+        profile:presence  "included" .
+
+_:b39   skos:scopeNote    _:b101 ;
+        profile:location  "$.result.duration" ;
+        profile:presence  "included" .
+
+_:b40   profile:any       "https://w3id.org/xapi/cmi5/context/categories/moveon" ;
+        profile:location  "$.context.contextActivities.category[*].id" ;
+        profile:presence  "included" .
+
+_:b46   profile:location  "$.result.score" ;
+        profile:presence  "recommended" .
+
+_:b47   profile:all       true ;
+        profile:location  "$.result.success" ;
+        profile:presence  "included" .
+
+_:b48   profile:location  "$.result.completion" ;
+        profile:presence  "excluded" .
+
+_:b49   skos:scopeNote    _:b102 ;
+        profile:location  "$.result.duration" ;
+        profile:presence  "included" .
+
+_:b50   profile:any       "https://w3id.org/xapi/cmi5/context/categories/moveon" ;
+        profile:location  "$.context.contextActivities.category[*].id" ;
+        profile:presence  "included" .
+
+_:b60   profile:location  "$.result.score" ;
+        profile:presence  "recommended" .
+
+_:b61   profile:all       false ;
+        profile:location  "$.result.success" ;
+        profile:presence  "included" .
+
+_:b62   profile:location  "$.result.completion" ;
+        profile:presence  "excluded" .
+
+_:b63   skos:scopeNote    _:b103 ;
+        profile:location  "$.result.duration" ;
+        profile:presence  "included" .
+
+_:b64   profile:any       "https://w3id.org/xapi/cmi5/context/categories/moveon" ;
+        profile:location  "$.context.contextActivities.category[*].id" ;
+        profile:presence  "included" .
+
+_:b75   profile:location  "$.result.score" ;
+        profile:presence  "excluded" .
+
+_:b76   profile:location  "$.result.success" ;
+        profile:presence  "excluded" .
+
+_:b77   profile:location  "$.result.completion" ;
+        profile:presence  "excluded" .
+
+_:b78   skos:scopeNote    _:b104 ;
+        profile:location  "$.result.duration" ;
+        profile:presence  "included" .
+
+_:b79   profile:location  "$.context.contextActivities.category[*].id" ;
+        profile:none      "https://w3id.org/xapi/cmi5/context/categories/moveon" .
+
+_:b11   profile:location  "$.result.score" ;
+        profile:presence  "excluded" .
+
+_:b12   profile:all       true ;
+        profile:location  "$.result.success" ;
+        profile:presence  "included" .
+
+_:b13   profile:all       true ;
+        profile:location  "$.result.completion" ;
+        profile:presence  "included" .
+
+_:b14   profile:location  "$.result['https://w3id.org/xapi/cmi5/result/extensions/reason']" ;
+        profile:presence  "included" .
+
+_:b15   profile:any       "https://w3id.org/xapi/cmi5/context/categories/moveon" ;
+        profile:location  "$.context.contextActivities.category[*].id" ;
+        profile:presence  "included" .
+
+_:b70   profile:location  "$.result.score" ;
+        profile:presence  "excluded" .
+
+_:b71   profile:location  "$.result.success" ;
+        profile:presence  "excluded" .
+
+_:b72   profile:location  "$.result.completion" ;
+        profile:presence  "excluded" .
+
+_:b73   skos:scopeNote    _:b105 ;
+        profile:location  "$.result.duration" ;
+        profile:presence  "included" .
+
+_:b74   profile:location  "$.context.contextActivities.category[*].id" ;
+        profile:none      "https://w3id.org/xapi/cmi5/context/categories/moveon" .
+
+_:b3    profile:location  "$.result.score" ;
+        profile:presence  "excluded" .
+
+_:b4    profile:location  "$.result.success" ;
+        profile:presence  "excluded" .
+
+_:b5    profile:location  "$.result.completion" ;
+        profile:presence  "excluded" .
+
+_:b6    profile:location  "$.context.contextActivities.category[*].id" ;
+        profile:none      "https://w3id.org/xapi/cmi5/context/categories/moveon" .
+
+_:b7    profile:any       "https://w3id.org/xapi/cmi5/activitytype/block" ;
+        profile:any       "https://w3id.org/xapi/cmi5/activitytype/course" ;
+        profile:location  "$.object.definition.type" ;
+        profile:presence  "included" .
